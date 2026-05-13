@@ -1,21 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Date</title>
+    <title>Wedding Invitation</title>
+
     <link rel="stylesheet" href="css/date.css" />
   </head>
+
   <body>
-    <h1 title="choose a date">Em rảnh vào hôm nào ...</h1>
-    <form class="form-group">
-      <label>Ngày nào: (chọn 1 ngày nhé)</label>
-      <div>
-        <input type="date" />
-        <button class="button" type="submit" formaction="food.html">
-          Tiếp
-        </button>
+
+    <!-- tim bay -->
+    <div class="hearts">
+      <span>❤</span>
+      <span>❤</span>
+      <span>❤</span>
+      <span>❤</span>
+      <span>❤</span>
+    </div>
+
+    <!-- khung thiệp -->
+    <div class="card-scene">
+
+      <div class="wedding-card">
+
+        <!-- nội dung -->
+        <div class="card-inside">
+
+          <h2>💍 Wedding Invitation 💍</h2>
+
+          <p class="invite-text">
+            Tụi mình rất mong được gặp bạn trong ngày hạnh phúc nhất 💖
+          </p>
+
+          <!-- layout giữa -->
+          <div class="content-row">
+
+            <!-- hình trái -->
+            <div class="inside-image left-inside resizable draggable">
+              <img
+                src="activities/daure.png"
+                alt="Cô dâu chú rể"
+                class="inside-img"
+              />
+
+              <div class="resize-handle"></div>
+            </div>
+
+            <!-- box ngày -->
+            <div class="date-box">
+
+              <h1>28-29/11</h1>
+
+              <div class="decor-line">
+                <span></span>
+                💖
+                <span></span>
+              </div>
+
+            </div>
+
+            <!-- hình phải -->
+            <div class="inside-image right-inside resizable draggable">
+              <img
+                src="activities/congcuoi.jpg"
+                alt="Cổng cưới"
+                class="inside-img"
+              />
+
+              <div class="resize-handle"></div>
+            </div>
+
+          </div>
+
+          <!-- nút -->
+          <button
+            class="button"
+            onclick="location.href='food.html'"
+          >
+            Xác nhận tham dự 💌
+          </button>
+
+        </div>
+
+        <!-- cánh trái -->
+        <div class="card-cover left-cover"></div>
+
+        <!-- cánh phải -->
+        <div class="card-cover right-cover"></div>
+
       </div>
-    </form>
+
+    </div>
+
+    <script>
+  const images = document.querySelectorAll(".inside-img");
+
+  images.forEach((img) => {
+
+    let scale = 1;
+
+    img.addEventListener("wheel", (e) => {
+
+      e.preventDefault();
+
+      if (e.deltaY < 0) {
+        scale += 0.1;
+      } else {
+        scale -= 0.1;
+      }
+
+      if (scale < 1) scale = 1;
+      if (scale > 3) scale = 3;
+
+      img.style.transform = `scale(${scale})`;
+    });
+
+  });
+</script>
+
   </body>
 </html>
