@@ -347,8 +347,6 @@ body {
     transform: rotateY(170deg);
   }
 }
-
-/* mobile */
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
@@ -359,40 +357,48 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
 
-    padding: 15px;
+    padding: 12px;
   }
 
   .card-scene {
     width: 100%;
+
+    display: flex;
+    justify-content: center;
   }
 
   .wedding-card {
     width: 100%;
-    max-width: 100%;
+    max-width: 390px;
 
     height: auto;
     min-height: auto;
   }
 
   .card-inside {
-    padding: 25px 18px 30px;
-    border-radius: 24px;
+    width: 100%;
+
+    padding: 22px 16px 28px;
+
+    border-radius: 22px;
   }
 
   .card-inside::before {
     inset: 10px;
+
+    border-radius: 16px;
   }
 
-  /* tiêu đề */
+  /* title */
   .card-inside h2 {
-    font-size: 30px;
+    font-size: 28px;
 
-    line-height: 1.3;
+    line-height: 1.4;
 
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 
-  /* mô tả */
+  /* text */
   .invite-text {
     width: 100%;
 
@@ -400,30 +406,35 @@ body {
 
     line-height: 1.6;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 
-    padding: 0 5px;
+    padding: 0 6px;
   }
 
-  /* layout mobile */
+  /* row */
   .content-row {
     width: 100%;
 
+    display: flex;
     flex-direction: column;
+
+    align-items: center;
 
     gap: 18px;
 
-    margin-bottom: 22px;
+    margin-bottom: 24px;
   }
 
-  /* hình */
+  /* image */
   .inside-image {
-    width: 100%;
-    max-width: 260px;
+    width: 220px;
+    height: 280px;
 
-    height: 320px;
+    border-radius: 20px;
 
-    border-radius: 22px;
+    overflow: hidden;
+
+    margin: 0 auto;
   }
 
   .inside-img {
@@ -431,34 +442,37 @@ body {
     height: 100%;
 
     object-fit: cover;
+
+    display: block;
   }
 
-  /* box ngày */
+  /* date */
   .date-box {
     width: 100%;
 
-    padding: 24px 18px;
+    max-width: 280px;
 
-    border-radius: 22px;
+    padding: 22px 16px;
+
+    border-radius: 20px;
   }
 
   .date-box h1 {
-    font-size: 42px;
+    font-size: 38px;
 
     line-height: 1.2;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .date-box p {
-    font-size: 15px;
+    font-size: 14px;
 
     letter-spacing: 2px;
   }
 
-  /* line */
   .decor-line {
-    margin-top: 15px;
+    margin-top: 14px;
 
     gap: 10px;
 
@@ -466,23 +480,23 @@ body {
   }
 
   .decor-line span {
-    width: 45px;
+    width: 40px;
   }
 
-  /* nút */
+  /* button */
   .button {
     width: 100%;
 
-    max-width: 280px;
+    max-width: 240px;
 
-    font-size: 16px;
+    font-size: 15px;
 
-    padding: 14px 20px;
+    padding: 13px 18px;
 
-    border-radius: 15px;
+    border-radius: 14px;
   }
 
-  /* tắt animation cánh trên mobile */
+  /* hide cover on phone */
   .card-cover {
     display: none;
   }
