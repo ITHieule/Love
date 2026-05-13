@@ -7,8 +7,10 @@
 
 body {
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
 
   display: flex;
   justify-content: center;
@@ -17,8 +19,9 @@ body {
   background: linear-gradient(135deg, #ffe6ef, #fff7fa);
 
   position: relative;
-}
 
+  padding: 20px 0;
+}
 /* tim bay */
 .hearts span {
   position: absolute;
@@ -351,125 +354,77 @@ body {
 @media (max-width: 768px) {
 
   body {
-    height: auto;
-    min-height: 100vh;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    padding: 30px 12px 60px;
-
     justify-content: flex-start;
+
+    align-items: center;
+
+    padding-top: 90px;
+    padding-bottom: 40px;
   }
 
   .card-scene {
     width: 100%;
-    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
   }
 
   .wedding-card {
-    width: 100%;
-    max-width: 100%;
-
+    width: 95%;
     height: auto;
-    min-height: auto;
   }
 
   .card-inside {
-    padding: 28px 18px 35px;
+    padding: 30px 18px;
   }
 
-  /* Ẩn cánh thiệp trên mobile */
-  .card-cover {
-    display: none;
-  }
-
-  /* tiêu đề */
   .card-inside h2 {
     font-size: 28px;
+
     line-height: 1.4;
 
     margin-bottom: 14px;
   }
 
-  /* mô tả */
   .invite-text {
     font-size: 15px;
 
-    line-height: 1.7;
+    line-height: 1.6;
 
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 
     width: 100%;
   }
 
-  /* layout */
   .content-row {
     flex-direction: column;
 
-    gap: 18px;
-
-    width: 100%;
-
-    margin-bottom: 24px;
+    gap: 20px;
   }
 
-  /* hình */
   .inside-image {
-    width: 100%;
-    max-width: 240px;
-
-    height: 300px;
-
-    border-radius: 20px;
+    width: 220px;
+    height: 280px;
   }
 
-  /* box ngày */
   .date-box {
     width: 100%;
 
-    padding: 22px 18px;
-
-    border-radius: 22px;
+    padding: 22px 16px;
   }
 
   .date-box h1 {
-    font-size: 34px;
-
-    line-height: 1.3;
-
-    margin-bottom: 10px;
+    font-size: 36px;
   }
 
-  .date-box p {
-    font-size: 14px;
-
-    letter-spacing: 2px;
-  }
-
-  .decor-line {
-    margin-top: 14px;
-
-    gap: 8px;
-
-    font-size: 18px;
-  }
-
-  .decor-line span {
-    width: 45px;
-  }
-
-  /* nút */
   .button {
-    width: 100%;
-
-    max-width: 260px;
-
     font-size: 15px;
 
-    padding: 14px 20px;
-
-    border-radius: 14px;
+    padding: 13px 22px;
   }
 
+  /* ẩn cánh thiệp mobile */
+  .card-cover {
+    display: none;
+  }
 }
