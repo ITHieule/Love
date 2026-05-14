@@ -292,31 +292,20 @@ body {
 
 /* ================= CÁNH THIỆP ================= */
 
-
 .card-cover {
   position: absolute;
-
   top: 0;
-
   width: 50%;
   height: 100%;
-
   z-index: 20;
 
-  overflow: hidden;
-
-   background: linear-gradient(135deg, #ff8fb1, #ffd6e3);
-
-  box-shadow: 0 0 18px rgba(0, 0, 0, 0.12);
-
-  transform-style: preserve-3d;
+  background: linear-gradient(135deg, #ff8fb1, #ffd6e3);
 
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 
   will-change: transform;
 }
-
 .left-cover {
   left: 0;
 
@@ -361,25 +350,6 @@ body {
   }
 }
 
-@keyframes openLeft {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  100% {
-    transform: rotateY(-160deg);
-  }
-}
-
-@keyframes openRight {
-  0% {
-    transform: rotateY(0deg);
-  }
-
-  100% {
-    transform: rotateY(160deg);
-  }
-}
 
 /* ================= CHỮ HIỆN ================= */
 .card-inside h2,
@@ -514,7 +484,7 @@ body {
     width: 95%;
     height: 680px;
 
-    transform: scale(0.92);
+    transform: none;
   }
 
   .card-inside {
@@ -568,5 +538,22 @@ body {
     font-size: 18px;
 
     animation-duration: 2.2s;
+  }
+    .left-cover {
+    animation: openLeftMobile 2.2s ease forwards;
+  }
+
+  .right-cover {
+    animation: openRightMobile 2.2s ease forwards;
+  }
+
+  @keyframes openLeftMobile {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(-150deg); }
+  }
+
+  @keyframes openRightMobile {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(150deg); }
   }
 }
