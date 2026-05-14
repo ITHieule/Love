@@ -9,7 +9,7 @@
 body {
   min-height: 100vh;
 
-  background: linear-gradient(135deg, #ffe6ef, #fff7fa);
+  background: linear-gradient(135deg, #f2e4dc, #ffffff);
 
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@ body {
 .hearts span {
   position: fixed;
 
-  color: rgba(255, 105, 180, 0.18);
+  color: rgba(122, 26, 28, 0.15);
 
   font-size: 28px;
 
@@ -59,6 +59,17 @@ body {
 .hearts span:nth-child(5) {
   left: 90%;
   animation-delay: 8s;
+}
+.card-scene {
+  perspective: 3000px;
+}
+.wedding-card {
+  width: 1200px;
+  max-width: 96%;
+  height: 680px;
+  position: relative;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }
 
 @keyframes heartFloat {
@@ -101,7 +112,7 @@ body {
 
   padding: 45px;
 
-  box-shadow: 0 20px 45px rgba(255, 105, 135, 0.18);
+  box-shadow: 0 20px 45px rgba(122, 26, 28, 0.18);
 
   border: 3px solid #ffd6e2;
 
@@ -162,7 +173,30 @@ body {
 
   font-weight: bold;
 }
+.card-inside {
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 28px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
 
+.card-inside::before {
+  content: "";
+  position: absolute;
+  inset: 15px;
+  /* Thay đổi: Viền dashed dùng màu nâu hồng trung bình */
+  border: 2px dashed #a6736a;
+  border-radius: 20px;
+}
 /* khung hình */
 .image-box {
   width: 280px;
@@ -201,34 +235,53 @@ body {
 .image-box:hover img {
   transform: scale(1.05);
 }
+/* ================= DATE BOX ================= */
+.date-box {
+  /* Thay đổi: Nền date box dùng màu kem nhạt */
+  background: rgba(242, 228, 220, 0.6);
+  width: 420px;
+  padding: 35px;
+  border-radius: 26px;
+  /* Thay đổi: Border dùng màu nâu hồng */
+  border: 3px solid #a6736a;
+  box-shadow: 0 10px 25px rgba(166, 115, 106, 0.15);
+}
+/* ================= DECOR ================= */
+.decor-line {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  /* Thay đổi: Màu icon/text trang trí dùng màu đỏ rượu */
+  color: #7a1a1c;
+  font-size: 24px;
+}
 
+.decor-line span {
+  width: 70px;
+  height: 2px;
+  /* Thay đổi: Đường kẻ dùng màu nâu hồng */
+  background: #a6736a;
+  display: block;
+}
 /* button */
 .button {
-  margin-top: 45px;
-
-  align-self: center;
-
-  padding: 18px 45px;
-
+  padding: 16px 38px;
   border: none;
-
   border-radius: 18px;
-
-  background: linear-gradient(135deg, #ff4f8b, #ff8fb1);
-
+  /* Thay đổi: Nút bấm gradient từ đỏ rượu sang nâu hồng */
+  background: linear-gradient(135deg, #7a1a1c, #a6736a);
   color: white;
-
-  font-size: 24px;
-
+  font-size: 20px;
   cursor: pointer;
-
   transition: 0.3s;
-
-  box-shadow: 0 10px 25px rgba(255, 105, 135, 0.3);
+  z-index: 2;
+  box-shadow: 0 10px 25px rgba(122, 26, 28, 0.3);
 }
 
 .button:hover {
-  transform: translateY(-4px) scale(1.04);
+  transform: translateY(-4px) scale(1.05);
 }
 
 /* mobile */
@@ -236,6 +289,7 @@ body {
 
   body {
     padding: 25px 15px;
+    background: linear-gradient(135deg, #f2e4dc, #ffffff);
   }
 
   .family-card {
