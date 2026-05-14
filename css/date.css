@@ -306,6 +306,7 @@ body {
 
   will-change: transform;
 }
+
 .left-cover {
   left: 0;
 
@@ -419,25 +420,82 @@ body {
   animation: petalFirework 3s ease-out infinite;
 }
 
-.petals span:nth-child(1)  { --x:-650px; --y:-420px; animation-delay:0s; }
-.petals span:nth-child(2)  { --x:650px;  --y:-420px; animation-delay:0.1s; }
-.petals span:nth-child(3)  { --x:-520px; --y:320px;  animation-delay:0.2s; }
-.petals span:nth-child(4)  { --x:520px;  --y:340px;  animation-delay:0.3s; }
-.petals span:nth-child(5)  { --x:-300px; --y:-600px; animation-delay:0.4s; }
-.petals span:nth-child(6)  { --x:300px;  --y:-620px; animation-delay:0.5s; }
-.petals span:nth-child(7)  { --x:-720px; --y:0px;    animation-delay:0.6s; }
-.petals span:nth-child(8)  { --x:720px;  --y:0px;    animation-delay:0.7s; }
-.petals span:nth-child(9)  { --x:-450px; --y:-250px; animation-delay:0.8s; }
-.petals span:nth-child(10) { --x:450px;  --y:-250px; animation-delay:0.9s; }
-.petals span:nth-child(11) { --x:-200px; --y:520px;  animation-delay:1s; }
-.petals span:nth-child(12) { --x:200px;  --y:540px;  animation-delay:1.1s; }
+.petals span:nth-child(1) {
+  --x: -650px;
+  --y: -420px;
+  animation-delay: 0s;
+}
+
+.petals span:nth-child(2) {
+  --x: 650px;
+  --y: -420px;
+  animation-delay: 0.1s;
+}
+
+.petals span:nth-child(3) {
+  --x: -520px;
+  --y: 320px;
+  animation-delay: 0.2s;
+}
+
+.petals span:nth-child(4) {
+  --x: 520px;
+  --y: 340px;
+  animation-delay: 0.3s;
+}
+
+.petals span:nth-child(5) {
+  --x: -300px;
+  --y: -600px;
+  animation-delay: 0.4s;
+}
+
+.petals span:nth-child(6) {
+  --x: 300px;
+  --y: -620px;
+  animation-delay: 0.5s;
+}
+
+.petals span:nth-child(7) {
+  --x: -720px;
+  --y: 0px;
+  animation-delay: 0.6s;
+}
+
+.petals span:nth-child(8) {
+  --x: 720px;
+  --y: 0px;
+  animation-delay: 0.7s;
+}
+
+.petals span:nth-child(9) {
+  --x: -450px;
+  --y: -250px;
+  animation-delay: 0.8s;
+}
+
+.petals span:nth-child(10) {
+  --x: 450px;
+  --y: -250px;
+  animation-delay: 0.9s;
+}
+
+.petals span:nth-child(11) {
+  --x: -200px;
+  --y: 520px;
+  animation-delay: 1s;
+}
+
+.petals span:nth-child(12) {
+  --x: 200px;
+  --y: 540px;
+  animation-delay: 1.1s;
+}
 
 @keyframes petalFirework {
   0% {
     transform:
-      translate(-50%, -50%)
-      scale(0.1)
-      rotate(0deg);
+      translate(-50%, -50%) scale(0.1) rotate(0deg);
 
     opacity: 0;
   }
@@ -448,30 +506,34 @@ body {
 
   100% {
     transform:
-      translate(
-        calc(-50% + var(--x)),
-        calc(-50% + var(--y))
-      )
-      scale(1.6)
-      rotate(1080deg);
+      translate(calc(-50% + var(--x)),
+        calc(-50% + var(--y))) scale(1.6) rotate(1080deg);
 
     opacity: 0;
   }
 }
 
 /* ================= MOBILE ================= */
+
+
 @media (max-width: 768px) {
 
   body {
-    justify-content: flex-start;
-    align-items: center;
+  width: 100%;
+  min-height: 100dvh;
 
-    /* FIX QUAN TRỌNG: tránh mất phần trên */
-    padding-top: 40px;
-    padding-bottom: 80px;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-    overflow-y: auto;
-  }
+  display: grid;
+  place-items: center;
+
+  background: linear-gradient(135deg, #ffe6ef, #fff7fa);
+
+  position: relative;
+
+  padding: 20px;
+}
 
   .card-scene {
     width: 100%;
