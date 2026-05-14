@@ -598,3 +598,46 @@ body {
   }
 
 }
+/* hiệu ứng chữ hiện chậm hơn */
+.card-inside h2,
+.invite-text,
+.content-row,
+.button {
+  opacity: 0;
+
+  transform: translateY(40px);
+
+  animation: fadeUp 1.8s ease forwards;
+}
+
+/* từng phần hiện chậm dần */
+.card-inside h2 {
+  animation-delay: 1.2s;
+}
+
+.invite-text {
+  animation-delay: 2.4s;
+}
+
+.content-row {
+  animation-delay: 3.8s;
+}
+
+.button {
+  animation-delay: 5s;
+}
+
+/* animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
