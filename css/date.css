@@ -29,8 +29,7 @@ body {
 .hearts span {
   position: absolute;
 
-  color: rgba(255, 105, 180, 0.25);
-
+  color: rgba(122, 26, 28, 0.15);
   font-size: 30px;
 
   animation: heartFloat 10s linear infinite;
@@ -127,7 +126,7 @@ body {
 
   inset: 15px;
 
-  border: 2px dashed #ffb6c1;
+  border: 2px dashed #a6736a;
 
   border-radius: 20px;
 }
@@ -182,7 +181,7 @@ body {
 
   position: relative;
 
-  background: #fff;
+  background: linear-gradient(135deg, #f2e4dc, #ffffff);
 
   border: 5px solid white;
 
@@ -208,7 +207,7 @@ body {
 
 /* ================= DATE BOX ================= */
 .date-box {
-  background: rgba(255, 240, 245, 0.95);
+  background: rgba(242, 228, 220, 0.6);
 
   width: 420px;
 
@@ -216,7 +215,7 @@ body {
 
   border-radius: 26px;
 
-  border: 3px solid #ffc2d1;
+  border: 3px solid #a6736a;
 
   box-shadow: 0 10px 25px rgba(255, 105, 135, 0.2);
 }
@@ -249,7 +248,7 @@ body {
 
   gap: 12px;
 
-  color: #ff5f95;
+  color: #7a1a1c;
 
   font-size: 24px;
 }
@@ -258,7 +257,7 @@ body {
   width: 70px;
   height: 2px;
 
-  background: #ffb6c1;
+  background: #a6736a;
 
   display: block;
 }
@@ -271,7 +270,7 @@ body {
 
   border-radius: 18px;
 
-  background: linear-gradient(135deg, #ff4f8b, #ff8fb1);
+  background: linear-gradient(135deg, #7a1a1c, #a6736a);
 
   color: white;
 
@@ -299,7 +298,7 @@ body {
   height: 100%;
   z-index: 20;
 
-  background: linear-gradient(135deg, #ff8fb1, #ffd6e3);
+background: linear-gradient(135deg, #7a1a1c, #a6736a);
 
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -535,7 +534,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  background: linear-gradient(135deg, #ffe6ef, #fff7fa);
+  background: linear-gradient(135deg, #f2e4dc, #ffffff);
 }
 
  .card-scene {
