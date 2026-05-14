@@ -422,11 +422,23 @@ body {
 
     padding: 13px 22px;
   }
+/* hiệu ứng mở thiệp mobile */
+.card-cover {
+  display: block;
+}
 
-  /* ẩn cánh thiệp mobile */
-  .card-cover {
-    display: none;
-  }
+/* giảm lag mobile */
+.left-cover,
+.right-cover {
+  animation-duration: 2.5s;
+}
+
+/* làm cánh nhẹ hơn */
+.card-cover {
+  background: linear-gradient(135deg, #66bb6a, #a5d6a7);
+
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.12);
+}
 }
 /* hiệu ứng chữ hiện từ từ */
 .card-inside h2,
@@ -596,43 +608,50 @@ body {
 
     animation-duration: 2.2s;
   }
+    .wedding-card {
+    transform: scale(0.92);
+  }
+
+  .card-scene {
+    perspective: 1800px;
+  }
 
 }
-/* hiệu ứng chữ hiện chậm hơn */
+
 .card-inside h2,
 .invite-text,
 .content-row,
 .button {
   opacity: 0;
 
-  transform: translateY(40px);
+  transform: translateY(35px);
 
-  animation: fadeUp 1.8s ease forwards;
+  animation: fadeUp 1.4s ease forwards;
 }
 
-/* từng phần hiện chậm dần */
+/* từng phần hiện nhanh hơn */
 .card-inside h2 {
-  animation-delay: 1.2s;
+  animation-delay: 0.8s;
 }
 
 .invite-text {
-  animation-delay: 2.4s;
+  animation-delay: 1.6s;
 }
 
 .content-row {
-  animation-delay: 3.8s;
+  animation-delay: 2.5s;
 }
 
 .button {
-  animation-delay: 5s;
+  animation-delay: 3.3s;
 }
 
 /* animation */
 @keyframes fadeUp {
   0% {
     opacity: 0;
-    transform: translateY(40px);
-    filter: blur(10px);
+    transform: translateY(35px);
+    filter: blur(8px);
   }
 
   100% {
