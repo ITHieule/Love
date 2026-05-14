@@ -4,29 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Thiệp Cưới Online ❤️😘</title>
+
     <link rel="stylesheet" href="css/valentine.css" />
   </head>
+
   <body>
-    <div id="valentineQuestion"><b>Hôm ấy, chỉ cần bạn đến thôi đã là món quà rất lớn với tụi mình rồi.</b></div>
-    <button class="answerButton" onclick="location.href='thankyou.html'">
+
+    <!-- HOA RƠI -->
+    <div class="flowers">
+      <span>🌸</span>
+      <span>🌸</span>
+      <span>🌸</span>
+      <span>🌸</span>
+      <span>🌸</span>
+      <span>🌸</span>
+      <span>🌸</span>
+      <span>🌸</span>
+      <span>🌸</span>
+      <span>🌸</span>
+    </div>
+
+    <div id="valentineQuestion">
+      <b>
+        𝗛ô𝗺 ấ𝘆, 𝗰𝗵ỉ 𝗰ầ𝗻 𝗯ạ𝗻 𝗱ế𝗻 𝘁𝗵ô𝗶 𝗱ã 𝗹à 𝗺ó𝗻 𝗾𝘂à 𝗿ấ𝘁 𝗹ớ𝗻 𝘃ớ𝗶 𝘁ụ𝗶 𝗺ì𝗻𝗵 𝗿ồ𝗶.
+      </b>
+    </div>
+
+    <button
+      class="answerButton"
+      onclick="location.href='thankyou.html'"
+    >
       Có
     </button>
-    <button class="answerButton" id="noButton">Không</button>
+
+    <button
+      class="answerButton"
+      id="noButton"
+    >
+      Không
+    </button>
+
     <br />
-    <img src="cat.gif" alt="cat asking question" class="responsive" />
+
+    <img
+      src="cat.gif"
+      alt="cat asking question"
+      class="responsive"
+    />
 
     <script>
       document
         .getElementById("noButton")
         .addEventListener("click", function () {
+
           var yesButton = document.querySelector(
             'button[onclick*="thankyou.html"]'
           );
+
           var currentFontSize = parseInt(
             window.getComputedStyle(yesButton).fontSize
           );
-          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+
+          yesButton.style.fontSize =
+            currentFontSize + 10 + "px";
+
         });
     </script>
+
   </body>
 </html>
