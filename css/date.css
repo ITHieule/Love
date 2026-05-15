@@ -395,11 +395,11 @@ body {
 }
 
 .card-inside h2 {
-  animation-delay: 0.8s;
+  animation-delay: 1.2s;
 }
 
 .invite-text {
-  animation-delay: 1.6s;
+  animation-delay: 2.0s;
 }
 
 .content-row {
