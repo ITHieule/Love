@@ -292,7 +292,15 @@ body {
 }
 
 /* ================= CÁNH THIỆP ================= */
+.card {
+  position: absolute;
+  inset: 0;
 
+  width: 100%;
+  height: 100%;
+}
+
+/* COVER */
 .card-cover {
   position: absolute;
   top: 0;
@@ -300,7 +308,7 @@ body {
   height: 100%;
   z-index: 20;
 
-background: linear-gradient(135deg, #7a1a1c, #7A1D1D);
+  background: linear-gradient(135deg, #7a1a1c, #7A1D1D);
 
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -310,28 +318,42 @@ background: linear-gradient(135deg, #7a1a1c, #7A1D1D);
 
 .left-cover {
   left: 0;
-
   border-radius: 28px 0 0 28px;
-
   transform-origin: left center;
-
-  animation: openLeft 2.5s ease forwards;
-
-  transform: translateZ(1px);
+  transform: translateZ(1px) rotateY(0deg);
 }
 
 .right-cover {
   right: 0;
-
   border-radius: 0 28px 28px 0;
-
   transform-origin: right center;
-
-  animation: openRight 2.5s ease forwards;
-
-  transform: translateZ(1px);
+  transform: translateZ(1px) rotateY(0deg);
 }
+.card-center-text {
+  position: absolute;
 
+  inset: 0; /* QUAN TRỌNG: thay top/left/width/height */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 64px;
+  font-weight: bold;
+
+  color: #ffd700;
+  text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+
+  z-index: 30;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: 0.3s ease;
+}
+.card-center-text:hover {
+  transform: scale(1.1);
+}
 @keyframes openLeft {
   0% {
     transform: translateZ(1px) rotateY(0deg);
@@ -351,6 +373,7 @@ background: linear-gradient(135deg, #7a1a1c, #7A1D1D);
     transform: translateZ(1px) rotateY(165deg);
   }
 }
+
 
 
 /* ================= CHỮ HIỆN ================= */
@@ -724,7 +747,8 @@ background: linear-gradient(135deg, #7a1a1c, #7A1D1D);
     min-height: 600px;
 
     transform: none;
-    position: relative;
+    position: relative; 
+    overflow: hidden;
 
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
