@@ -10,27 +10,23 @@
 
 <body>
 
-<!-- TIM BAY -->
-<div class="hearts">
-  <span>💖</span><span>💖</span><span>💖</span>
-  <span>💖</span><span>💖</span>
-</div>
-
 <!-- PHÁO HOA -->
 <div class="petals">
   <span>🌸</span><span>🌸</span><span>🌸</span><span>🌸</span>
-  <span>🌺</span><span>🌺</span>
-  <span>💮</span><span>💮</span>
+  <span>🌸</span><span>🌸</span><span>🌸</span><span>🌸</span>
+  <span>🌺</span><span>🌺</span><span>🌺</span><span>🌺</span>
+  <span>💮</span><span>💮</span><span>💮</span><span>💮</span>
 </div>
 
+<!-- KHUNG THIỆP -->
 <div class="card-scene">
 
   <div class="wedding-card">
 
-    <!-- CHỮ MỞ THIỆP -->
+    <!-- NÚT MỞ THIỆP -->
     <div class="card-center-text" id="openBtn">囍</div>
 
-    <!-- NỘI DUNG (GIỮ NGUYÊN CỦA BẠN) -->
+    <!-- NỘI DUNG -->
     <div class="card-inside">
 
       <h2>💍𝐖𝐄𝐃𝐃𝐈𝐍𝐆 𝐂𝐄𝐑𝐄𝐌𝐎𝐍𝐘💍</h2>
@@ -45,7 +41,6 @@
           <img src="activities/daure.png" class="inside-img" />
         </div>
 
-        <!-- DATE BOX + LỊCH (GIỮ NGUYÊN) -->
         <div class="date-box">
 
           <h1>28-29/11</h1>
@@ -94,12 +89,71 @@
 </div>
 
 <script>
+/* ZOOM IMAGE */
+const images = document.querySelectorAll(".inside-img");
+
+images.forEach((img) => {
+  let scale = 1;
+
+  /* ================= PC (wheel) ================= */
+  img.addEventListener("wheel", (e) => {
+    e.preventDefault();
+
+    if (e.deltaY < 0) scale += 0.1;
+    else scale -= 0.1;
+
+    if (scale < 1) scale = 1;
+    if (scale > 3) scale = 3;
+
+    img.style.transform = `scale(${scale})`;
+  }, { passive: false });
+
+
+  /* ================= MOBILE (pinch zoom đơn giản) ================= */
+  let startDistance = 0;
+
+  const getDistance = (touches) => {
+    const dx = touches[0].clientX - touches[1].clientX;
+    const dy = touches[0].clientY - touches[1].clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  };
+
+  img.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 2) {
+      startDistance = getDistance(e.touches);
+    }
+  });
+
+  img.addEventListener("touchmove", (e) => {
+    if (e.touches.length === 2) {
+      e.preventDefault();
+
+      const newDistance = getDistance(e.touches);
+
+      if (startDistance > 0) {
+        const diff = newDistance - startDistance;
+
+        if (diff > 10) scale += 0.05;
+        if (diff < -10) scale -= 0.05;
+
+        if (scale < 1) scale = 1;
+        if (scale > 3) scale = 3;
+
+        img.style.transform = `scale(${scale})`;
+      }
+
+      startDistance = newDistance;
+    }
+  }, { passive: false });
+
+});
+/* MỞ THIỆP */
 const btn = document.getElementById("openBtn");
 
 btn.addEventListener("click", () => {
 
-  const left = document.querySelector(".wedding-card .left-cover");
-  const right = document.querySelector(".wedding-card .right-cover");
+  const left = document.querySelector(".left-cover");
+  const right = document.querySelector(".right-cover");
 
   left.style.transition = "transform 2.5s ease";
   right.style.transition = "transform 2.5s ease";
@@ -111,6 +165,28 @@ btn.addEventListener("click", () => {
     btn.style.opacity = "0";
     btn.style.pointerEvents = "none";
   }, 800);
+});
+
+const petals = document.querySelectorAll(".petals span");
+
+petals.forEach((p) => {
+
+  function loop() {
+
+    const x = (Math.random() * 1200 - 600) + "px";
+    const y = (Math.random() * 800 - 400) + "px";
+
+    p.style.setProperty("--x", x);
+    p.style.setProperty("--y", y);
+
+    // mỗi hạt tự lặp liên tục
+    const delay = 1500 + Math.random() * 2000;
+
+    setTimeout(loop, delay);
+  }
+
+  // delay ngẫu nhiên ban đầu để không đồng bộ
+  setTimeout(loop, Math.random() * 2000);
 
 });
 </script>
